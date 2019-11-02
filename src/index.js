@@ -1,8 +1,8 @@
-console.log('home');
+console.log('hom111qwqwqwqw11e');
 
 class Log {
     constructor() {
-        console.lo('出错了')
+        console.log('出错了')
     }
 }
 

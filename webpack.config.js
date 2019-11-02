@@ -20,6 +20,12 @@ module.exports = {
     // devtool: "cheap-module-source-map", // 产生后你可以保留起来
     // 4. 不会产生文件，集成在打包后的文件中，不会产生列
     devtool: "cheap-module-eval-source-map",
+    watch: true,
+    watchOptions: { // 监控的选项
+        poll: 1000, // 每秒问我1000次
+        aggregateTimeout: 500, // 防抖 我一直输入代码
+        ignored: /node_modules/ // 不需要被监控的文件
+    },
     module: {
         rules: [
             {
