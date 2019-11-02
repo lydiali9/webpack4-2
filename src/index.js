@@ -1,4 +1,4 @@
-console.log('hom111qwqwqwqw11e');
+console.log('hom111qwqwqwqwewewr11e');
 
 class Log {
     constructor() {

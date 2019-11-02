@@ -1,6 +1,12 @@
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let webpack = require('webpack');
 
+// 1. cleanWebpackPlugin 每次打包前先清除dist文件
+// 2. copyWebpackPlugin 拷贝doc等文件打包到dist文件下
+// 3. bannerPlugin 内置 打包文件头插入版权
 module.exports = {
     // 多入口
     mode: 'production',
@@ -45,6 +51,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html'
-        })
+        }),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            {
+                from: 'wiki',
+                to: './'
+            }
+        ]),
+        new webpack.BannerPlugin('make 2019 by lynnli')
     ]
 }
