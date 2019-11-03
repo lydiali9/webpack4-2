@@ -6,7 +6,7 @@ let webpack = require('webpack');
 
 // 中间件 可以在服务端启动webpack
 let middle = require('webpack-dev-middleware');
-let config = require('./webpack.config.js');
+let config = require('./webpack.base.js');
 
 let compiler = webpack(config);
 

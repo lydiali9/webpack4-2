@@ -11,6 +11,20 @@ import './style'; // 省略后缀名 style.css
 //
 // let log = new Log();
 
+
+let url = '';
+
+if(DEV === 'dev') {
+    url = 'http://localhost:3000';
+} else {
+    url = 'http://www.baidu.com';
+}
+console.log(url);
+console.log('----------------');
+
+console.log(typeof FLAG);
+console.log(EXPORESSION);
+
 let xhr = new XMLHttpRequest();
 
 // http://localhost:8080 webpack-ev-server的服务, 再把请求转发给3000
