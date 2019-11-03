@@ -1,9 +1,23 @@
-console.log('hom111qwqwqwqwewewr11e');
+// console.log('hom111qwqwqwqwewewr11e');
+//
+// class Log {
+//     constructor() {
+//         console.log('出错了')
+//     }
+// }
+//
+// let log = new Log();
 
-class Log {
-    constructor() {
-        console.log('出错了')
-    }
+let xhr = new XMLHttpRequest();
+
+// http://localhost:8080 webpack-ev-server的服务, 再把请求转发给3000
+// http-proxy
+// 1
+// xhr.open('GET', '/api/user', true);
+// 2
+xhr.open('GET', '/user', true);
+xhr.onload = function () {
+    console.log(xhr.response);
 }
 
-let log = new Log();
+xhr.send();
