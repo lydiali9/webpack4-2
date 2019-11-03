@@ -1,3 +1,6 @@
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap';
+import './style'; // 省略后缀名 style.css
 // console.log('hom111qwqwqwqwewewr11e');
 //
 // class Log {

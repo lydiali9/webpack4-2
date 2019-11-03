@@ -56,8 +56,25 @@ module.exports = {
         aggregateTimeout: 500, // 防抖 我一直输入代码
         ignored: /node_modules/ // 不需要被监控的文件
     },
+    resolve: { // 解析 第三方包 common
+        modules: [path.resolve('node_modules')],
+        // 扩展名 先找css 在找js
+        extensions: ['.js', '.css', '.json', '.vue']
+        // 在bootstrap下面先找style 在找main文件， 原因是优先会找main
+        // mainFields: ['style', 'main']
+        // 指定入口文件的名字 默认找index.js
+        // mainFiles: []
+        // import 'bootstrap/dist/css/bootstrap.css'; 引入太长 用别名
+        // alias: {
+        //     bootstrap: 'bootstrap/dist/css/bootstrap.css'
+        // }
+    },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
             {
                 test: /\.js$/,
                 use: {
